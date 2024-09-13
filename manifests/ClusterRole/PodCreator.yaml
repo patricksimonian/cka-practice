@@ -1,0 +1,14 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pod-creator
+  labels:
+    role-type: default
+rules:
+- apiGroups: [""]
+  resources: ["pods", "deployments"]
+  verbs:
+  - get
+  - update
+  - list
+  - create
