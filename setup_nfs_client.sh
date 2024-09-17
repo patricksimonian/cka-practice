@@ -14,15 +14,8 @@ if [ -z "$NFS_PATH" ]; then
     exit 1
 fi
 
+sudo apt install nfs-common -y
+
 MOUNT_PATH=/mnt/nfs
 sudo mkdir -p $MOUNT_PATH
 sudo mount "$NFS_HOST:$NFS_PATH" $MOUNT_PATH
-
-
-
-helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
-helm repo update
-
-helm install nfs-client nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
-  --set "nfs.server=$NFS_HOST" \
-  --set "nfs.path=$NFS_PATH"

@@ -50,7 +50,7 @@ sudo apt install nfs-kernel-server -y
 
 
 
-ENTRY="/media/nfs		192.168.1.0/24(rw,sync,no_subtree_check)"
+ENTRY="/media/$LV_NAME		192.168.1.0/24(rw,sync,no_subtree_check)"
 
 # File to check
 EXPORTS_FILE="/etc/exports"
@@ -65,3 +65,4 @@ fi
 
 sudo systemctl enable --now nfs-server
 sudo systemctl restart nfs-server
+sudo chown -R nobody:nogroup "/media/$LV_NAME"
