@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+
+
+# TO be turned into an ansible script
+
+# 1. setup nfs server if not already done
+# Requires
+# - Logical Volume Group Name
+# - Logical Volume Name
+# - Mount Size 
+# script mounts to /media/<group name>
+
+# 2. On each worker node setup the nfs client
+# setup_nfs_client
+
+# 3. Setup k8s provisioner

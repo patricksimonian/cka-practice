@@ -14,9 +14,6 @@ if [ -z "$NFS_PATH" ]; then
     exit 1
 fi
 
-MOUNT_PATH=/mnt/nfs
-sudo mkdir -p $MOUNT_PATH
-sudo mount "$NFS_HOST:$NFS_PATH" $MOUNT_PATH
 
 
 
